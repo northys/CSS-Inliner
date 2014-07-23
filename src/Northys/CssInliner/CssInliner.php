@@ -14,7 +14,11 @@ class CSSInliner {
 	private $css;
 	
 	public function addCSS ($filename) {
-		$this->css = new CSS\Parser(file_get_contents($filename));
+		$css = file_get_contents($filename);
+		if (!$css) {
+			throw new \Exception("Failed on loading CSS file. Check the file path you have provided!", 1);
+		}
+		$this->css = new CSS\Parser($css);
 		$this->css = $this->css->parse();
 	}
 	
