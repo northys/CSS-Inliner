@@ -1,5 +1,6 @@
 {
     "require": {
-        "symfony/css-selector": "@dev"
+        "symfony/css-selector": "*",
+        "sabberworm/php-css-parser": "*"
     }
 }
