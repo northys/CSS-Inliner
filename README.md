@@ -28,10 +28,12 @@ Method `addCSS` accepts filepath to CSS file however `render` accepts html conte
 
 #### Input
 
+```html
 	<h1>Hello, world!</h1>
 	<a href="http://google.com" class="google">Google</a>
 	<a href="http://Facebook.com" class="facebook">Facebook</a>
 	<a href="http://Outlook.com" id="outlook">Outlook</a>
+```
 
 #### Output
 
