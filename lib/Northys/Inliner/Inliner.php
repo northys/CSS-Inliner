@@ -9,7 +9,7 @@ use Symfony\Component\CssSelector\CssSelector,
  *
  * @author Northys
  */
-class Inliner {
+class CSSInliner {
 	/** @var Sabberworm\CSS\Parser */
 	private $css;
 	
