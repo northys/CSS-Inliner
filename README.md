@@ -5,7 +5,7 @@ CSS-Inliner is simple PHP tools that **inserts CSS from file into HTML style att
 
 I tried to make it **as fast as possible**, but due to third party libraries I can't do more.
 
-Anyway, this tools wasn't created for **inlining CSS files of bambilions of lines (hey, [Bootstrap](http://getbootstrap.com))**, but for inlining styles into e-mails. So I hope it will do its job for you and helps you with creating newsletters, sending notification mails and so on.
+Anyway, this tools wasn't created for **inlining CSS files of bambilions of lines (hey, [Bootstrap](http://getbootstrap.com) - of course you can inline it, but you will have enough time to make a coffee)**, but for inlining styles into e-mails. So I hope it will do its job for you and helps you with creating newsletters, sending notification mails and so on.
 
 ## Usage
 
