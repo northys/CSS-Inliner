@@ -26,7 +26,8 @@ $ composer require northys/css-inliner
 	$inliner->render(file_get_contents(__DIR__ . '/example.html'));
 ```
 
-Method `addCSS` accepts filepath to CSS file however `render` accepts html content. If you would like to know why here is the reason for you - there are tons of templating system like `Nette\Latte` or `Smarty` and sometimes you need to use this tool on code that those libs generated.
+Method `addCSS()` accepts file path to the CSS file however `render()` accepts html content.
+If you would like to know why, here is the reason for you - there are tons of templating system like `Nette\Latte` or `Smarty` and sometimes you will need to use this tool on code that those libs generated.
 
 #### Input
 
