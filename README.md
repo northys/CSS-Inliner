@@ -7,13 +7,17 @@ Inliner is simple PHP tools that inserts CSS from file into HTML tags. Nothing m
 
 ### Installation using composer
 
-Add php-css-parser to your composer.json
+Add northys/inliner to your composer.json. It is necessary to install this tools using composer. Otherwise you will need to download another libs manually.
 
 	{
 	    "require": {
 	        "northys/inliner": "*"
 	    }
 	}
+
+### Requirements
+	- https://github.com/sabberworm/PHP-CSS-Parser
+	- https://github.com/symfony/CssSelector
 
 ### Example code
 
