@@ -30,7 +30,11 @@ class CSSInliner {
 		foreach ($this->css->getAllRuleSets() as $ruleSet) {
 			$selector = $ruleSet->getSelector();
 			foreach ($finder->evaluate(CssSelector::toXPath($selector[0])) as $node) {
-				$node->setAttribute('style', implode(' ', $ruleSet->getRules()));
+				if ($node->getAttribute('style')) {
+					$node->setAttribute('style', $node->getAttribute('style') . implode(' ', $ruleSet->getRules()));
+				} else {
+					$node->setAttribute('style', implode(' ', $ruleSet->getRules()));
+				}
 			}
 		}
 		if ($return == TRUE) {
