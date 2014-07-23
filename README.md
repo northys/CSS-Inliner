@@ -16,8 +16,8 @@ Add northys/inliner to your composer.json. It is necessary to install this tools
 	}
 
 ### Requirements
-	- https://github.com/sabberworm/PHP-CSS-Parser
-	- https://github.com/symfony/CssSelector
+ - https://github.com/sabberworm/PHP-CSS-Parser
+ - https://github.com/symfony/CssSelector
 
 ### Example code
 
