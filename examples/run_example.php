@@ -1,4 +1,5 @@
 <?php
+	require __DIR__ . '/../src/Northys/CssInliner/CssInliner.php';
 	require __DIR__ . '/../vendor/autoload.php';
 	
 	$inliner = new Northys\CSSInliner;
