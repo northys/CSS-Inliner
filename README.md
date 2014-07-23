@@ -33,7 +33,7 @@ $inliner->render(file_get_contents(__DIR__ . '/example.html'));
 Method `addCSS()` accepts file path to the CSS file however `render()` accepts html content.
 If you would like to know why, here is the reason for you - there are tons of templating system like `Nette\Latte` or `Smarty` and sometimes you will need to use this tool on code that those libs generated.
 
-#### Input
+#### [Input](http://northys.github.io/CSS-Inliner/example.htm)
 
 ```html
 <h1>Hello, world!</h1>
@@ -49,7 +49,7 @@ a.facebook{color:#8e44ad;margin:300px;}
 a.google{color:#c0392b;font-weight:700;font-family:Verdana, 'Open Sans';font-size:30px;}
 ```
 
-#### Output
+#### [Output](http://northys.github.io/CSS-Inliner/)
 
 ```html
 <h1 style="color: #27ae60; margin: 10px 50px 80px 30px; font-size: 200px;">Hello, world!</h1>
