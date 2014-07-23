@@ -1,13 +1,13 @@
-Inliner
+CSS-Inliner
 -------
 
-Inliner is simple PHP tools that inserts CSS from file into HTML tags. Nothing more, nothing less :)
+CSS-Inliner is simple PHP tools that inserts CSS from file into HTML tags. Nothing more, nothing less :)
 
 ## Usage
 
 ### Installation using composer
 
-Add northys/inliner to your composer.json. It is necessary to install this tools using composer. Otherwise you will need to download another libs manually.
+Add northys/css-inliner to your composer.json. It is necessary to install this tools using composer. Otherwise you will need to download another libs manually.
 
 	{
 	    "require": {
@@ -21,7 +21,7 @@ Add northys/inliner to your composer.json. It is necessary to install this tools
 
 ### Example code
 
-	$inliner = new Northys\Inliner;
+	$inliner = new Northys\CSSInliner;
 	$inliner->addCSS(__DIR__ . '/example.css');
 	$inliner->render(file_get_contents(__DIR__ . '/example.html'));
 	
