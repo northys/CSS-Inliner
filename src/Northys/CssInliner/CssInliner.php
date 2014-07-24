@@ -41,7 +41,7 @@ class CSSInliner
 
 
 
-	public function parseCSS() {
+	private function getCSS() {
 		// get styles inside <style> tags in provided HTML
 		foreach ($this->dom->getElementsByTagName('style') as $style) {
 			$this->css .= $style->textContent;
@@ -62,7 +62,7 @@ class CSSInliner
 		$this->dom = new \DOMDocument;
 		$this->dom->loadHTML($html);
 		$this->finder = new \DOMXPath($this->dom);
-		$this->css = $this->parseCSS();
+		$this->css = $this->getCSS();
 		foreach ($this->css->getAllRuleSets() as $ruleSet) {
 			$selector = $ruleSet->getSelector();
 			foreach ($this->finder->evaluate(CssSelector::toXPath($selector[0])) as $node) {
