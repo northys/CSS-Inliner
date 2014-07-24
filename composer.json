@@ -1,5 +1,5 @@
 {
-    "name": "northys/inliner",
+    "name": "northys/css-inliner",
     "description": "PHP Library that converts css file into html inline styles.",
     "require": {
         "symfony/css-selector": "*",
