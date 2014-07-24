@@ -1,15 +1,14 @@
 {
-    "name": "northys/css-inliner",
-    "description": "PHP Library that converts css file into html inline styles.",
-    "require": {
-        "symfony/css-selector": "*",
-        "sabberworm/php-css-parser": "*"
-    },
-    "license": "LGPL",
-    "authors": [
-        {
-            "name": "Jiri Travnicek"
-        }
-    ],
-    "minimum-stability": "stable"
+	"name": "northys/css-inliner",
+	"description": "PHP Library that converts css file into html inline styles.",
+	"license": "LGPL",
+	"authors": [
+		{
+			"name": "Jiri Travnicek"
+		}
+	],
+	"require": {
+		"symfony/css-selector": "~2.5",
+		"sabberworm/php-css-parser": "6.0.*"
+	}
 }
