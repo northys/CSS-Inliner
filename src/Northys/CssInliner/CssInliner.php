@@ -1,32 +1,43 @@
 <?php
+
 namespace Northys;
 
-use Symfony\Component\CssSelector\CssSelector,
-	Sabberworm\CSS;
+use Sabberworm\CSS;
+use Symfony\Component\CssSelector\CssSelector;
+
+
 
 /**
- * Description of Inliner
- *
  * @author Northys
  */
-class CSSInliner {
-	/** @var Sabberworm\CSS\Parser */
+class CSSInliner
+{
+
+	/**
+	 * @var CSS\CSSList\Document
+	 */
 	private $css;
-	
-	public function addCSS ($filename) {
-		$css = file_get_contents($filename);
-		if (!$css) {
+
+
+
+	public function addCSS($filename)
+	{
+		if ( ! $css = @file_get_contents($filename)) {
 			throw new \Exception("Failed on loading CSS file. Check the file path you have provided!", 1);
 		}
-		$this->css = new CSS\Parser($css);
-		$this->css = $this->css->parse();
+
+		$parser = new CSS\Parser($css);
+		$this->css = $parser->parse();
 	}
-	
-	public function render ($html, $return = FALSE) {
+
+
+
+	public function render($html)
+	{
 		$dom = new \DOMDocument;
 		$dom->loadHTML($html);
 		$finder = new \DOMXPath($dom);
-		
+
 		foreach ($this->css->getAllRuleSets() as $ruleSet) {
 			$selector = $ruleSet->getSelector();
 			foreach ($finder->evaluate(CssSelector::toXPath($selector[0])) as $node) {
@@ -37,10 +48,7 @@ class CSSInliner {
 				}
 			}
 		}
-		if ($return == TRUE) {
-			return $dom->saveHTML();
-		} else {
-			echo $dom->saveHTML();
-		}
+
+		return $dom->saveHTML();
 	}
 }
