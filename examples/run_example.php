@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../../../autoload.php';
 
 $inliner = new Northys\CSSInliner;
 $inliner->addCSS(__DIR__ . '/example.css');
