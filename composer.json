@@ -10,5 +10,8 @@
 	"require": {
 		"symfony/css-selector": "~2.5",
 		"sabberworm/php-css-parser": "6.0.*"
+	},
+	"autoload": {
+		"classmap": ["src/"]
 	}
 }
