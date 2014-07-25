@@ -8,6 +8,6 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-/vendor
-/composer.lock
-/nbproject
+vendor
+composer.lock
+nbproject
