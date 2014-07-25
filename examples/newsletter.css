@@ -1,0 +1,167 @@
+/* 
+    Created on : 23.7.2014, 22:24:17
+    Author     : Northys
+*/
+
+#outlook a {
+	padding: 0;
+}
+
+body {
+	width: 100%!important;
+	-webkit-text-size-adjust: none;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	border: none;
+	font-size: 14px;
+	font-weight: 700;
+	height: auto;
+	line-height: 100%;
+	outline: none;
+	text-decoration: none;
+	text-transform: capitalize;
+	vertical-align: middle;
+}
+
+#backgroundTable {
+	height: 100%!important;
+	width: 100%!important;
+	margin: 0;
+	padding: 0;
+}
+
+#templateContainer {
+	border: 1px solid #DDD;
+}
+
+h1,.h1 {
+	color: #202020;
+	display: block;
+	font-family: Arial;
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 100%;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+h2,.h2 {
+	color: #202020;
+	display: block;
+	font-family: Arial;
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 100%;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+h3,.h3 {
+	color: #202020;
+	display: block;
+	font-family: Arial;
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 100%;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+.preheaderContent div {
+	color: #505050;
+	font-family: Arial;
+	font-size: 10px;
+	line-height: 100%;
+	text-align: left;
+}
+
+.preheaderContent div img {
+	height: auto;
+	max-width: 600px;
+}
+
+#templateHeader {
+	background-color: #FFF;
+	border-bottom: 0;
+}
+
+.headerContent {
+	color: #202020;
+	font-family: Arial;
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 100%;
+	text-align: center;
+	vertical-align: middle;
+	padding: 0;
+}
+
+#headerImage {
+	height: auto;
+	max-width: 600px!important;
+}
+
+#templateContainer,.bodyContent {
+	background-color: #FDFDFD;
+}
+
+.bodyContent div {
+	color: #505050;
+	font-family: Arial;
+	font-size: 14px;
+	line-height: 150%;
+	text-align: left;
+}
+
+.bodyContent img {
+	display: inline;
+	margin-bottom: 0!important;
+}
+
+#templateFooter {
+	background-color: #FDFDFD;
+	border-top: 0;
+}
+
+.footerContent div {
+	color: #707070;
+	font-family: Arial;
+	font-size: 12px;
+	line-height: 125%;
+	text-align: left;
+}
+
+.footerContent img {
+	display: inline;
+}
+
+#social {
+	background-color: #FAFAFA;
+	border: 1px solid #F5F5F5;
+}
+
+#utility {
+	background-color: #FDFDFD;
+	border-top: 1px solid #F5F5F5;
+}
+
+#monkeyRewards img {
+	max-width: 160px;
+}
+
+body,.backgroundTable,#templatePreheader {
+	background-color: #FAFAFA;
+}
+
+.preheaderContent div a:link,.preheaderContent div a:visited,.headerContent a:link,.headerContent a:visited,.bodyContent div a:link,.bodyContent div a:visited,.footerContent div a:link,.footerContent div a:visited {
+	color: #369;
+	font-weight: 400;
+	text-decoration: underline;
+}
+
+#social div,#utility div {
+	text-align: center;
+}
