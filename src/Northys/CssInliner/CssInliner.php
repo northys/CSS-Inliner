@@ -1,14 +1,19 @@
 <?php
 
-namespace Northys;
+namespace Northys\CSSInliner;
 
+use Northys\CSSInliner\Exceptions;
+use DOMDocument;
+use DOMXPath;
+use Exception;
 use Sabberworm\CSS;
 use Symfony\Component\CssSelector\CssSelector;
 
 
-
 /**
+ * Class CSSInliner
  * @author Northys
+ * @package Northys\CSSInliner
  */
 class CSSInliner
 {
@@ -19,29 +24,37 @@ class CSSInliner
 	private $css;
 
 	/**
-	 * @var DOMDocument
+	 * @var \DOMDocument
 	 */
 	private $dom;
 
 	/**
-	 * @var DOMXPath
+	 * @var \DOMXPath
 	 */
 	private $finder;
 
 
-
-	public function addCSS($filename)
+    /**
+     * Provides you an option to add as many CSS files as you want
+     * @param string $filename represents css file path
+     * @throws \Exception
+     */
+    public function addCSS($filename)
 	{
 		if ( ! $css = @file_get_contents($filename)) {
-			throw new \Exception("Failed on loading CSS file. Check the file path you have provided!", 1);
+			throw new Exceptions\InvalidCssFilePathException('Invalid css file path provided.');
 		}
 		// merge all CSS content into $this-css variable
 		$this->css .= $css;
 	}
 
 
-
-	private function getCSS() {
+    /**
+     * Gets styles from <style> html tag - if there are any it will be merged with another styles added by addCss()
+     * @return CSS\CSSList\Document
+     * @throws \Exception
+     */
+    private function getCSS() {
 		// get styles inside <style> tags in provided HTML
 		foreach ($this->dom->getElementsByTagName('style') as $style) {
 			$this->css .= $style->textContent;
@@ -50,14 +63,18 @@ class CSSInliner
 
 		$css = $parser->parse();
 		if (!$css) {
-			throw new \Exception("You haven't provided any styles by addCSS() method. There is also no styles inside HTML.", 1);			
+			throw new Exceptions\NoCssRulesException('There are no CSS rules provided.');
 		}
 		return $css;
 	}
 
 
-
-	public function render($html)
+    /**
+     * Prepares everything and inserts inline styles into html
+     * @param string $html represents html document
+     * @return string
+     */
+    public function render($html)
 	{
 		$this->dom = new \DOMDocument;
 		$this->dom->loadHTML($html);
