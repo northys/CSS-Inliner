@@ -3,9 +3,6 @@
 namespace Northys\CSSInliner;
 
 use Northys\CSSInliner\Exceptions;
-use DOMDocument;
-use DOMXPath;
-use Exception;
 use Sabberworm\CSS;
 use Symfony\Component\CssSelector\CssSelector;
 
