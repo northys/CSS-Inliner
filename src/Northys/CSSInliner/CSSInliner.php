@@ -38,7 +38,7 @@ class CSSInliner
      */
     public function addCSS($filename)
 	{
-		if ( ! $css = @file_get_contents($filename)) {
+		if (($css = @file_get_contents($filename)) !== FALSE) {
 			throw new Exceptions\InvalidCssFilePathException('Invalid css file path provided.');
 		}
 		// merge all CSS content into $this-css variable
