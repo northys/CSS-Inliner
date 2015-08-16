@@ -3,6 +3,7 @@ var request = require('request'),
 	myHost = 'http://cssinliner.dev/',
 	myBody = null,
 	myPath = null,
+	myTemplatesPath = 'templates/',
 	myOutput = 'output',
 	myPrefix = '- ';
 
@@ -15,10 +16,10 @@ process.argv.forEach(
 
 if(myPath != null){
 	try {
-		stats = fs.lstatSync(myPath);
+		stats = fs.lstatSync(myTemplatesPath + myPath);
 	    if (stats.isDirectory()) {
 	        
-			request(myHost + myPath + '/' + myPath + '.php', 
+			request(myHost + myTemplatesPath + myPath + '/' + myPath + '.php', 
 				function(err, response, body) {
 
 					if(err) console.log(err);
@@ -26,7 +27,7 @@ if(myPath != null){
 					myBody = body;
 			  		console.log(myPrefix + 'Its works');
 					
-					fs.writeFile(myPath + '/' + myOutput + '.html', myBody, 
+					fs.writeFile(myTemplatesPath + myPath + '/' + myOutput + '.html', myBody, 
 						function(err) {
 						    if(err) {
 						        return console.log(err);
