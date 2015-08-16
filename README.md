@@ -57,3 +57,14 @@ a.google{color:#c0392b;font-weight:700;font-family:Verdana, 'Open Sans';font-siz
 <a href="http://Facebook.com" class="facebook" style="color: #8e44ad; margin: 300px;">Facebook</a>
 <a href="http://Outlook.com" id="outlook" style="color: #2980b9; padding: 50; position: absolute; top: 30px; left: 500px;">Outlook</a>
 ```
+
+### Or run it with node
+1. Install dependencies
+```js
+	npm install
+```
+2. Run
+```js
+	node index example myResult
+```
+A file myResult.html will be genereted in templates/example.
