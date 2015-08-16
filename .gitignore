@@ -11,3 +11,5 @@ $RECYCLE.BIN/
 vendor
 composer.lock
 nbproject 
+
+node_modules/

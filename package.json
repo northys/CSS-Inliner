@@ -1,0 +1,8 @@
+{
+  "name": "CSSInliner",  
+  "description": "Simple PHP tools that inserts CSS from file into HTML tags.",
+  "priavete": true,
+  "dependencies": {
+    "request": "~2.53.0"
+  }
+}
