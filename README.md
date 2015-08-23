@@ -69,4 +69,5 @@ a.google{color:#c0392b;font-weight:700;font-family:Verdana, 'Open Sans';font-siz
 ```
 A file myResult.html will be genereted in templates/example.
 
-Your .html and .css files must be the same name of yout template path. See an example: https://github.com/alisonmonteiro/CSS-Inliner/tree/master/templates
+Your .html and .css files must be the same name of your template path. 
+See an example in https://github.com/alisonmonteiro/CSS-Inliner/tree/master/templates
