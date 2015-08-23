@@ -18,10 +18,9 @@ if(myPath != null){
 	try {
 		stats = fs.lstatSync(myTemplatesPath + myPath);
 	    if (stats.isDirectory()) {
-	        
-			request(myHost + myTemplatesPath + myPath + '/' + myPath + '.php', 
-				function(err, response, body) {
 
+			request(myHost + myTemplatesPath + 'config.php?template=' + myPath, 
+				function(err, response, body) {
 					if(err) console.log(err);
 
 					myBody = body;
