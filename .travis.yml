@@ -4,8 +4,8 @@ php:
   - 5.4
   - 5.5
   - 5.6
-  - 7.0
   - hhvm
+  - 5.4
 
 # This triggers builds to run on the new TravisCI infrastructure.
 # See: http://docs.travis-ci.com/user/workers/container-based-infrastructure/
@@ -13,7 +13,7 @@ sudo: false
 
 matrix:
   allow_failures:
-    - php: 5.4
+    - php: 7.0
   include:
     - php: 5.4
       env: 'COMPOSER_FLAGS="--prefer-stable --prefer-lowest"'
@@ -24,7 +24,8 @@ before_script:
   - composer dump-autoload -o
 
 script:
-  - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover --verbose
+  - cd tests
+  - ../vendor/bin/phpunit . --coverage-text --coverage-clover=coverage.clover --verbose
 
 after_script:
   - if [[ $TRAVIS_PHP_VERSION != 'hhvm' && $TRAVIS_PHP_VERSION != '7.0' ]]; then php vendor/bin/ocular code-coverage:upload --format=php-clover coverage.clover; fi
