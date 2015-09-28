@@ -1,6 +1,11 @@
 CSS-Inliner
 -------
 
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE.md)
+[![Build Status][ico-travis]][link-travis]
+[![Total Downloads][ico-downloads]][link-downloads]
+
 CSS-Inliner is simple PHP tools that **inserts CSS from file into HTML style attributes**. Nothing more, nothing less.
 
 I tried to make it **as fast as possible**, but due to third party libraries I can't do more.
@@ -71,3 +76,18 @@ A file myResult.html will be genereted in templates/example.
 
 Your .html and .css files must be the same name of your template path. 
 See an example in https://github.com/alisonmonteiro/CSS-Inliner/tree/master/templates
+
+[ico-version]: https://img.shields.io/packagist/v/northys/CSS-Inliner.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-travis]: https://travis-ci.org/Northys/CSS-Inliner.svg?branch=master
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/northys/CSS-Inliner.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/northys/CSS-Inliner.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/northys/CSS-Inliner.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/northys/CSS-Inliner
+[link-travis]: https://travis-ci.org/Northys/CSS-Inliner
+[link-scrutinizer]: https://scrutinizer-ci.com/g/northys/CSS-Inliner/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/northys/CSS-Inliner
+[link-downloads]: https://packagist.org/packages/northys/CSS-Inliner
+[link-author]: https://github.com/Northys
+[link-contributors]: ../../contributors
