@@ -4,7 +4,7 @@ namespace Northys\CSSInliner;
 
 use Northys\CSSInliner\Exceptions;
 use Sabberworm\CSS;
-use Symfony\Component\CssSelector\CssSelector;
+use Symfony\Component\CssSelector\CssSelectorConverter;
 
 
 /**
@@ -79,7 +79,7 @@ class CSSInliner
 		$this->css = $this->getCSS();
 		foreach ($this->css->getAllRuleSets() as $ruleSet) {
 			$selector = $ruleSet->getSelector();
-			foreach ($this->finder->evaluate(CssSelector::toXPath($selector[0])) as $node) {
+			foreach ($this->finder->evaluate((new CssSelectorConverter())->toXPath($selector[0])) as $node) {
 				if ($node->getAttribute('style')) {
 					$node->setAttribute('style', $node->getAttribute('style') . implode(' ', $ruleSet->getRules()));
 				} else {
