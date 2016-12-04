@@ -20,6 +20,3 @@ before_script:
 script:
   - cd tests
   - ../vendor/bin/phpunit . --coverage-text --coverage-clover=coverage.clover --verbose
-
-after_script:
-  - if [[ $TRAVIS_PHP_VERSION != 'hhvm' && $TRAVIS_PHP_VERSION != '7.0' ]]; then php vendor/bin/ocular code-coverage:upload --format=php-clover coverage.clover; fi
