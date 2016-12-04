@@ -3,7 +3,7 @@
 namespace Northys\CSSInliner;
 
 use Sabberworm\CSS;
-use Symfony\Component\CssSelector\CssSelector;
+use Symfony\Component\CssSelector\CssSelectorConverter;
 
 /**
  * Class CSSInliner.
@@ -75,13 +75,14 @@ class CSSInliner
      */
     public function render($html)
     {
+    	$converter = new CssSelectorConverter();
         $this->dom = new \DOMDocument();
         $this->dom->loadHTML($html);
         $this->finder = new \DOMXPath($this->dom);
         $this->css = $this->getCSS();
         foreach ($this->css->getAllRuleSets() as $ruleSet) {
             $selector = $ruleSet->getSelector();
-            foreach ($this->finder->evaluate(CssSelector::toXPath($selector[0])) as $node) {
+            foreach ($this->finder->evaluate($converter->toXPath($selector[0])) as $node) {
                 if ($node->getAttribute('style')) {
                     $node->setAttribute('style', $node->getAttribute('style').implode(' ', $ruleSet->getRules()));
                 } else {

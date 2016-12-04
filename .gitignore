@@ -9,7 +9,6 @@ Desktop.ini
 $RECYCLE.BIN/
 
 vendor
-composer.lock
-nbproject 
+nbproject
 
 node_modules/

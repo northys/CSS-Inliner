@@ -15,8 +15,8 @@ class CSSInlinerTest extends \PHPUnit_Framework_TestCase
     public function testComponent()
     {
         $inliner = new CSSInliner();
-        $inliner->addCSS(__DIR__.'/test.css');
-        $output = $inliner->render(file_get_contents('test.html'), true);
+        $inliner->addCSS(__DIR__ . '/test.css');
+        $output = $inliner->render(file_get_contents(__DIR__ . '/test.html'), true);
         $expected = <<<'EXPECTED'
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html><body><h1 style="color: #27ae60; font-size: 200px; margin: 10px 50px 80px 30px;">Hello, world!</h1>
