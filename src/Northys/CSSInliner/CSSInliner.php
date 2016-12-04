@@ -2,7 +2,11 @@
 
 namespace Northys\CSSInliner;
 
+use DOMDocument;
+use DOMXPath;
+use Exception;
 use Sabberworm\CSS;
+use Sabberworm\CSS\CSSList\Document;
 use Symfony\Component\CssSelector\CssSelectorConverter;
 
 /**
@@ -13,17 +17,17 @@ use Symfony\Component\CssSelector\CssSelectorConverter;
 class CSSInliner
 {
     /**
-     * @var CSS\CSSList\Document
+     * @var Document
      */
     private $css;
 
     /**
-     * @var \DOMDocument
+     * @var DOMDocument
      */
     private $dom;
 
     /**
-     * @var \DOMXPath
+     * @var DOMXPath
      */
     private $finder;
 
@@ -32,7 +36,7 @@ class CSSInliner
      *
      * @param string $filename represents css file path
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function addCSS($filename)
     {
@@ -46,9 +50,9 @@ class CSSInliner
     /**
      * Gets styles from <style> html tag - if there are any it will be merged with another styles added by addCss().
      *
-     * @return CSS\CSSList\Document
+     * @return Document
      *
-     * @throws \Exception
+     * @throws Exception
      */
     private function getCSS()
     {
@@ -76,9 +80,9 @@ class CSSInliner
     public function render($html)
     {
     	$converter = new CssSelectorConverter();
-        $this->dom = new \DOMDocument();
+        $this->dom = new DOMDocument();
         $this->dom->loadHTML($html);
-        $this->finder = new \DOMXPath($this->dom);
+        $this->finder = new DOMXPath($this->dom);
         $this->css = $this->getCSS();
         foreach ($this->css->getAllRuleSets() as $ruleSet) {
             $selector = $ruleSet->getSelector();
